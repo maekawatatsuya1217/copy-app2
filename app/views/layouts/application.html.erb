@@ -4,12 +4,36 @@
     <title>CopyApp2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%# ヘッダー %>
+      <header>
+        <div class="container">
+          <div class="top_header">
+            <h1><%= link_to "manablog", root_path, class: :logo %></h1>
+            <h5>Written by Tatsuya Maekawa</h3>
+          </div>
+        </div>
+        <div class="under_header nav_bg">
+          <nav>
+            <ul class="nav">
+              <li><i class="fas fa-home"></i></li>
+              <li><i class="fas fa-chart-line"></i>SEO</li>
+              <li><i class="fas fa-code"></i>CODE</li>
+              <li><i class="fas fa-globe-asia"></i>LIFE</li>
+              <li><i class="fas fa-dollar-sign"></i>CRYPTO</li>
+              <li><i class="fas fa-globe-asia"></i>TRAVEL</li>
+              <li><i class="fas fa-spinner"></i>THOUGHT</li>
+              <li><i class="fas fa-glass-cheers"></i>PARTY</li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <%# ヘッダー %>
     <%= yield %>
   </body>
 </html>
