@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CopyApp2</title>
+    <title>maeblog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%# ヘッダー %>
+      <header>
+        <div class="container">
+          <div class="top_header">
+            <h1><%= link_to "maeblog", root_path, class: :logo %></h1>
+            <h5>Produced by Tatsuya Maekawa</h3>
+          </div>
+        </div>
+        <div class="under_header nav_bg">
+          <nav>
+            <ul class="nav">
+              <li><%= link_to root_path, class: :nav_btn do %><i class="fas fa-home"></i><% end %></li>
+              <li><%= link_to root_path, class: :nav_btn do %><i class="fas fa-list-ul"></i>TODO<% end %></li>
+              <li><%= link_to root_path, class: :nav_btn do %><i class="fas fa-code"></i>CODE<% end %></li>
+              <li><%= link_to root_path, class: :nav_btn do %><i class="fas fa-paint-brush"></i>DESIGN<% end %></li>
+              <li><%= link_to root_path, class: :nav_btn do %><i class="fas fa-globe-americas"></i>LIFE<% end %></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <%# ヘッダー %>
     <%= yield %>
   </body>
 </html>
