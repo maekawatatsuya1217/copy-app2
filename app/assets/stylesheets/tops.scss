@@ -60,3 +60,42 @@
 .fas{
     margin-right: 8px;
 }
+
+
+
+// メイン
+
+.top_main_content{
+    height: 100%;
+}
+
+
+
+// 機能の説明
+
+.area_function{
+    padding: 20px;
+}
+  
+.app_function{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 150px;
+    margin: 0px 0 0 200px;
+    height: 80px;
+    border-bottom: 1px solid black;
+}
+  
+.function_bottom_space{
+    height: 20px;
+}
+
+.function_name{
+    font-size: 25px;
+    margin-top: 17px;
+}
+
+.function_description{ 
+    height: 80px;
+    width: 400px;
+}
