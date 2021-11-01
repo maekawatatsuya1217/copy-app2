@@ -38,13 +38,18 @@
     padding: 0 15px;
 }
 
+.nav_parent{
+    display: flex;
+    justify-content: space-between;
+}
+
 .nav{
     display: flex;
     color: #fff;
     font-size: 17px;
     padding: 15px;
-    margin-left: 133px;
-    margin-right: 133px;
+    margin-left: 100px;
+    margin-right: 100px;
     list-style: none;
 }
 
