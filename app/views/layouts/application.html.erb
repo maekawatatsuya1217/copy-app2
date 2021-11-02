@@ -31,7 +31,7 @@
               <ul class="nav">
                 <% if user_signed_in? %>
                   <li><%= link_to destroy_user_session_path, method: :delete, class: :nav_btn do %><i class="fas fa-spinner"></i>LOGOUT<% end %></li>
-                  <li><%= link_to root_path, class: :nav_btn do %><i class="fas fa-user"></i><%= current_user.nickname %><% end %></li>
+                  <li><%= link_to user_path(current_user.id), class: :nav_btn do %><i class="fas fa-user"></i><%= current_user.nickname %><% end %></li>
                 <% else %>
                   <li><%= link_to new_user_session_path, class: :nav_btn do %><i class="fas fa-spinner"></i>LOGIN<% end %></li>
                   <li><%= link_to new_user_registration_path, class: :nav_btn do %><i class="fas fa-spinner"></i>SIGN UP<% end %></li>
