@@ -9,7 +9,7 @@
 
       <% if user_signed_in? && current_user.id == @user.id %>
         <div class="user_edit_parent">
-          <%= link_to "編集", root_path(@user), class: :user_edit_child %>
+          <%= link_to "編集", edit_user_path(@user), class: :user_edit_child %>
         </div>
       <% end %>
 
