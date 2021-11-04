@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="inner">
+    <div class="form_wrapper">
+      <h2 class="page_heading">LOGIN</h2>
+
+        <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+
+        <div class='login-flash-message'>
+          <%= flash[:notice] %>
+          <%= flash[:alert] %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, "email" %><br />
+          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email", class: :form_text %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "password" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password", class: :form_text %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "LOGIN", class: :form_btn  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
