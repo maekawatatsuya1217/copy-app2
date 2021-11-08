@@ -1,8 +1,9 @@
 class TasksController < ApplicationController
 
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:index, :store, :destroy]
   before_action :tasks_definition, only: [:index, :show]
   before_action :task_build, only: [:show]
+  before_action :unless, only: [:update, :destroy]
 
   def index
     @status = ['todo', 'state', 'limit_date']  
@@ -36,6 +37,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    task       = Task.find(params[:id])
+    task.destroy
+    redirect_to '/tasks', notice: 'タスクを削除しました。'
   end
 
   private
@@ -46,5 +50,11 @@ class TasksController < ApplicationController
 
   def task_build
     @task = Task.find(params[:id])
+  end
+
+  def unless
+    unless user_signed_in? && current_user.id == @task.user.id
+     redirect_to tasks_path
+    end 
   end
 end
