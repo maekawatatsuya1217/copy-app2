@@ -1,13 +1,17 @@
 class TasksController < ApplicationController
 
   before_action :authenticate_user!, only: [:index]
-  before_action :tasks_definition, only: [:index]
+  before_action :tasks_definition, only: [:index, :show]
+  before_action :task_build, only: [:show]
 
   def index
-    @status = ['todo', 'advice', 'memo']  
+    @status = ['todo', 'state', 'limit_date']  
   end
 
   def show
+    id      = params[:id]
+    @task   = Task.find(id)
+    @status = ['todo', 'doing', 'done']
   end
 
   def store
@@ -29,5 +33,9 @@ class TasksController < ApplicationController
 
   def tasks_definition
     @tasks = Task.where(user_id: current_user.id).includes(:user).order('created_at DESC')
+  end
+
+  def task_build
+    @task = Task.find(params[:id])
   end
 end
