@@ -24,6 +24,15 @@ class TasksController < ApplicationController
   end
 
   def update
+    id   = params[:id]
+    task = Task.find(1)
+
+    task.task         = params[:task]
+    task.state        = params[:state]
+    task.limit_date   = params[:limit_date]
+    task.save
+
+    redirect_to '/tasks', notice: 'タスクを更新しました。'
   end
 
   def destroy
