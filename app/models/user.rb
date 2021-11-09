@@ -11,4 +11,6 @@ class User < ApplicationRecord
     validates :nickname
   end
 
+  has_many :tasks
+
 end
