@@ -13,11 +13,15 @@
 ActiveRecord::Schema.define(version: 2021_11_08_013953) do
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "state"
-    t.text "task"
-    t.date "limit_date"
+    t.string "title", null: false
+    t.text "description"
+    t.datetime "target_at"
+    t.datetime "completed_at"
+    t.boolean "completed", default: false, null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -33,4 +37,5 @@ ActiveRecord::Schema.define(version: 2021_11_08_013953) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tasks", "users"
 end
