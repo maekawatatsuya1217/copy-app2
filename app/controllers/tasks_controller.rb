@@ -1,60 +1,48 @@
 class TasksController < ApplicationController
 
-  before_action :authenticate_user!, only: [:index, :store, :destroy]
-  before_action :tasks_definition, only: [:index, :show]
-  before_action :task_build, only: [:show]
-  before_action :unless, only: [:update, :destroy]
+  before_action :authenticate_user!
 
   def index
-    @status = ['todo', 'state', 'limit_date']  
+    @tasks = current_user.tasks
   end
 
   def show
-    id      = params[:id]
-    @task   = Task.find(id)
-    @status = ['todo', 'doing', 'done']
+    @task = target_task params[:id]
   end
 
-  def store
-    task = Task.new
-    task.task       = params[:task]
-    task.state      = params[:state]
-    task.limit_date = params[:limit_date]
-    task.save
-    redirect_to '/tasks', notice: 'タスクを作成しました。'
+  def new
+    @task = Task.new
+  end
+
+  def create
+    @task = current_user.tasks.new task_params
+    @task.save!
+    redirect_to @task
+  end
+
+  def edit
+    @task = target_task params[:id]
   end
 
   def update
-    id   = params[:id]
-    task = Task.find(1)
-
-    task.task         = params[:task]
-    task.state        = params[:state]
-    task.limit_date   = params[:limit_date]
-    task.save
-
-    redirect_to '/tasks', notice: 'タスクを更新しました。'
+    @task = target_task params[:id]
+    @task.update(task_params)
+    redirect_to @task
   end
 
   def destroy
-    task       = Task.find(params[:id])
-    task.destroy
-    redirect_to '/tasks', notice: 'タスクを削除しました。'
+    @task = target_task params[:id]
+    @task.destroy
+    redirect_to tasks_url
   end
 
   private
-
-  def tasks_definition
-    @tasks = Task.where(user_id: current_user.id).includes(:user).order('created_at DESC')
+  def target_task task_id
+    current_user.tasks.where(id: task_id).take
   end
 
-  def task_build
-    @task = Task.find(params[:id])
+  def task_params
+    params.require(:task).permit(:title, :description)
   end
-
-  def unless
-    unless user_signed_in? && current_user.id == @task.user.id
-     redirect_to tasks_path
-    end 
-  end
+  
 end
