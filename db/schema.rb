@@ -15,9 +15,6 @@ ActiveRecord::Schema.define(version: 2021_11_08_013953) do
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
-    t.datetime "target_at"
-    t.datetime "completed_at"
-    t.boolean "completed", default: false, null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

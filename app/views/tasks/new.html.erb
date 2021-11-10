@@ -1,7 +1,9 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<h1>Create Todo</h1>
 <div style="width: 300px;">
   <%= form_for(@task) do |f| %>
+
+  <%= render 'devise/shared/error_messages', model: f.object %>
+  
   <div>
     <%= f.label :title %>
     <%= f.text_field :title, size: 50 %>
