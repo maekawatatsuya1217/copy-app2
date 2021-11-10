@@ -4,6 +4,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = current_user.tasks
+    @advices = current_user.advices
   end
 
   def show
@@ -29,8 +30,11 @@ class TasksController < ApplicationController
 
   def update
     @task = target_task params[:id]
-    @task.update(task_params)
-    redirect_to @task
+    if @task.update(task_params)
+        redirect_to @task
+    else
+      render :edit
+    end
   end
 
   def destroy
