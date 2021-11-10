@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "tops#index"
   resources :users, only: [:show, :edit, :update]
   resources :tasks
+  resources :advices
 end
