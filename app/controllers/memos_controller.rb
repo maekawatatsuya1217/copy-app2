@@ -36,6 +36,12 @@ class MemosController < ApplicationController
         end
     end
 
+    def destroy
+        @memo = target_memo params[:id]
+        @memo.destroy
+        redirect_to tasks_url
+    end
+
     private
 
     def memo_params
