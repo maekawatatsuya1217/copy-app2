@@ -1,0 +1,18 @@
+<h1>Create Memo</h1>
+<div style="width: 300px;">
+  <%= form_for(@memo) do |f| %>
+
+    <%= render 'devise/shared/error_messages', model: f.object %>
+  
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, size: 50 %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+    <%= f.submit 'Submit' %>
+  <% end %>
+</div>
+<p><%= link_to '一覧に戻る', tasks_url %></p>
