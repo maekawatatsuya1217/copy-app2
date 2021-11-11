@@ -6,6 +6,10 @@ class MemosController < ApplicationController
         @memos = current_user.memos
     end
 
+    def show
+        @memo = target_memo params[:id]
+    end
+
     def new
         @memo = Memo.new
     end
@@ -20,6 +24,10 @@ class MemosController < ApplicationController
     end
 
     private
+
+    def target_memo memo_id
+        current_user.memos.where(id: memo_id).take
+    end
 
     def memo_params
         params.require(:memo).permit(:title, :description)
