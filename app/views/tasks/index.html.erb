@@ -49,7 +49,7 @@
         <td><%= memo.title %></td>
         <td><%= memo.description %></td>
         <td><%= link_to 'Show', memo_path(memo) %></td>
-        <td><%= link_to 'Edit', edit_task_path(@tasks) %></td>
+        <td><%= link_to 'Edit', edit_memo_path(memo) %></td>
         <td><%= link_to 'Delete', task_path(@tasks), method: :delete %></td>
       </tr>
       <% end %>

@@ -23,13 +23,26 @@ class MemosController < ApplicationController
         end
     end
 
-    private
-
-    def target_memo memo_id
-        current_user.memos.where(id: memo_id).take
+    def edit
+        @memo = target_memo params[:id]
     end
+
+    def update
+        @memo = target_memo params[:id]
+        if @memo.update(memo_params)
+            redirect_to @memo
+        else
+            render :edit
+        end
+    end
+
+    private
 
     def memo_params
         params.require(:memo).permit(:title, :description)
+    end
+
+    def target_memo memo_id
+        current_user.memos.where(id: memo_id).take
     end
 end
