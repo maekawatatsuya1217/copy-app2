@@ -1,9 +1,9 @@
 <div class="main">
   <div class="inner">
     <div class="form_wrapper">
-      <h1 class="page_heading">Create Todo</h1>
+      <h1 class="page_heading">Create Memo</h1>
       <div class="create_box">
-        <%= form_for(@task) do |f| %>
+        <%= form_for(@memo) do |f| %>
 
           <%= render 'devise/shared/error_messages', model: f.object %>
         
@@ -20,8 +20,9 @@
         </div>
 
         <div class="form_gap"></div>
-        
-          <%= f.submit 'Submit', class: :form_btn %>
+
+        <%= f.submit 'Submit', class: :form_btn %>
+
         <% end %>
       </div>
       <p><%= link_to '一覧に戻る', tasks_url, class: :form_btn %></p>

@@ -44,6 +44,21 @@
     transition: 0.2s ease;
 }
 
+.aform_btn{
+    display: inline-block;
+    padding: 0.4em 1.6em;
+    font-size: 0.8em;
+    color: rgb(6, 2, 2);
+    text-decoration: none;
+    user-select: none;
+    background: rgb(255, 255, 255);
+    border: 1px rgb(255, 255, 255) solid;
+    border-radius: 15px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+    transition: 0.2s ease;
+    margin-bottom: 30px;
+}
+
 
 
 
@@ -62,6 +77,10 @@
 .show_header{
     text-align: center;
     margin-bottom: 40px;
+}
+
+.aedit{
+    text-align: center;
 }
       
 .user_edit_parent{

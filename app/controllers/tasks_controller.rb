@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   def index
     @tasks = current_user.tasks
     @advices = current_user.advices
+    @memos = current_user.memos
   end
 
   def show

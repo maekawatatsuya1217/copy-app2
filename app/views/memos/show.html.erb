@@ -4,7 +4,7 @@
     <div class="show_header_top"></div>
 
       <h2 class="show_header">
-        <h1 class="aedit">Tasks#show</h1>
+        <h1 class="aedit">Memos#show</h1>
       </h2>
 
       <div class="user_edit_parent">
@@ -15,11 +15,11 @@
         <tbody>
           <tr>
             <th class="table_col1">Title</th>
-            <td class="table_col2"><%= @task.title %></td>
+            <td class="table_col2"><%= @memo.title %></td>
           </tr>
           <tr>
             <th class="table_col1">Desctiption</th>
-            <td class="table_col2"><%= safe_join(@task.description.split("\n"),tag(:br)) %></td>
+            <td class="table_col2"><%= safe_join(@memo.description.split("\n"),tag(:br)) %></td>
           </tr>
         </tbody>
       </table>

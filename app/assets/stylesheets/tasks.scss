@@ -1,16 +1,39 @@
 .lists_box{
     display: flex;
-    margin: 5%;
+    margin:  3% 0.1%;
 }
 
-.task_box{
-    width: 30%;
+.all_box{
+    width: 33%;
+    background-color: rgb(245, 245, 245);
+    padding: 0 1%;
+    margin: 0 1%;
 }
 
-.advice_box{
-    width: 30%;
+.all_box h1{
+    text-align: center;
 }
 
-.memo_box{
-    width: 30%;
+.all_box .fas{
+    color: rgb(152, 214, 253);
+}
+
+.create_content{
+    text-align: center;
+}
+
+.fa-plus-square{
+    font-size: 30px;
+    color: rgb(152, 214, 253);
+}
+
+.aform_text {
+    width: 400px;
+    height: 20px;
+    outline: none;
+    margin: 0 auto;
+}
+
+.form_gap{
+    margin: 7%;
 }

@@ -1,11 +1,30 @@
-<h1>Advices#show</h1>
-<table>
-  <tr>
-    <th>Advice</th>
-    <td><%= @advice.title %></td></tr>
-  <tr>
-    <th>Description</th>
-    <td><%= @advice.description %></td>
-  </tr>
-</table>
-<p><%= link_to '一覧に戻る', tasks_url %></p>
+<div class="main">
+  <div class="inner">
+    <div class="user_wrapper">
+    <div class="show_header_top"></div>
+
+      <h2 class="show_header">
+        <h1 class="aedit">Advices#show</h1>
+      </h2>
+
+      <div class="user_edit_parent">
+        <%= link_to '一覧に戻る', tasks_url, class: :aform_btn %>
+      </div>
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table_col1">Title</th>
+            <td class="table_col2"><%= @advice.title %></td>
+          </tr>
+          <tr>
+            <th class="table_col1">Desctiption</th>
+            <td class="table_col2"><%= safe_join(@advice.description.split("\n"),tag(:br)) %></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="user_card_bottom"></div>
+    </div>
+  </div>
+</div>

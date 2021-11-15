@@ -1,61 +1,57 @@
 <div class="lists_box">
 
-  <div class="task_box">
+  <div class="task_box all_box">
     <h1>Todo List</h1>
     <table>
       <tr>
-        <th>Title</th><th>Description</th><th></th><th></th><th></th>
+        <th></th><th></th><th></th>
       </tr>
       <% @tasks.each do |task| %>
       <tr>
         <td><%= task.title %></td>
-        <td><%= task.description %></td>
-        <td><%= link_to 'Show', task_path(task) %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Delete', task_path(task), method: :delete %></td>
+        <td><%= link_to task_path(task), class: :go_btn do %><i class="fas fa-book-open"></i><% end %></td>
+        <td><%= link_to edit_task_path(task), class: :go_btn do %><i class="fas fa-pen"></i><% end %></td>
+        <td><%= link_to task_path(task), method: :delete, class: :go_btn do %><i class="fas fa-trash"></i><% end %></td>
       </tr>
       <% end %>
     </table>
-    <p><%= link_to 'ToDoの作成', new_task_path %></p>
+    <p class="create_content"><%= link_to new_task_path do %><i class="far fa-plus-square"></i><% end %></p>
   </div>
 
-  <div class="advice_box">
+  <div class="advice_box all_box">
     <h1>Advice List</h1>
     <table>
       <tr>
-        <th>Advice</th><th>Description</th><th></th><th></th><th></th>
+        <th></th><th></th><th></th>
       </tr>
       <% @advices.each do |advice| %>
       <tr>
         <td><%= advice.title %></td>
-        <td><%= advice.description %></td>
-        <td><%= link_to 'Show', advice_path(advice) %></td>
-        <td><%= link_to 'Edit', edit_advice_path(advice) %></td>
-        <td><%= link_to 'Delete', advice_path(advice), method: :delete %></td>
+        <td><%= link_to advice_path(advice), class: :go_btn do %><i class="fas fa-book-open"></i><% end %></td>
+        <td><%= link_to edit_advice_path(advice), class: :go_btn do %><i class="fas fa-pen"></i><% end %></td>
+        <td><%= link_to advice_path(advice), method: :delete, class: :go_btn do %><i class="fas fa-trash"></i><% end %></td>
       </tr>
       <% end %>
     </table>
-    <p><%= link_to 'Adviceの作成', new_advice_path %></p>
+    <p class="create_content"><%= link_to new_advice_path do %><i class="far fa-plus-square"></i><% end %></p>
   </div>
 
-  <div class="memo_box">
+  <div class="memo_box all_box">
   <h1>Memo List</h1>
     <table>
       <tr>
-        <th>Id</th><th>Title</th><th>Description</th><th></th><th></th><th></th>
+        <th></th><th></th><th></th>
       </tr>
-      <% @tasks.each do |task| %>
+      <% @memos.each do |memo| %>
       <tr>
-        <td><%= task.id %></td>
-        <td><%= task.title %></td>
-        <td><%= task.description %></td>
-        <td><%= link_to 'Show', task_path(task) %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Delete', task_path(task), method: :delete %></td>
+        <td><%= memo.title %></td>
+        <td><%= link_to memo_path(memo), class: :go_btn do %><i class="fas fa-book-open"></i><% end %></td>
+        <td><%= link_to edit_memo_path(memo), class: :go_btn do %><i class="fas fa-pen"></i><% end %></td>
+        <td><%= link_to memo_path(memo), method: :delete, class: :go_btn do %><i class="fas fa-trash"></i><% end %></td>
       </tr>
       <% end %>
     </table>
-    <p><%= link_to 'ToDoの作成', new_task_path %></p>
+    <p class="create_content"><%= link_to new_memo_path do %><i class="far fa-plus-square"></i><% end %></p>
   </div>
 
 </div>

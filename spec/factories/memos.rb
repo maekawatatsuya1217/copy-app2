@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :advice do
+  factory :memo do
     title       {'タイトル'}
     description {'説明'}
 
