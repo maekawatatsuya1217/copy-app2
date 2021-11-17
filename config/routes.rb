@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :tasks
   resources :advices
   resources :memos
+  resources :codes, only: [:index]
 end
