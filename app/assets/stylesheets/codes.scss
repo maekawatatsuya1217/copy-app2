@@ -1,3 +1,52 @@
-// Place all the styles related to the codes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.blog_inner{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+}
+
+.header_bottom_content{
+    height: 80px;
+    background-color: #f7f7f7;
+}
+
+.main_top{
+    display: flex;
+    margin-left: 360px;
+}
+
+.new_blog_btn{
+    display: inline-block;
+    padding: 0.4em 1.6em;
+    font-size: 0.8em;
+    color: black;
+    background-color: rgb(230, 230, 230);
+    text-decoration: none;
+    user-select: none;
+    border-radius: 15px;
+}
+  
+.new_blog_btn:hover{
+    color: black;
+    background-color: rgb(140, 250, 140);
+}
+
+.card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 1024px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.blog_post_message{
+    text-align: center;
+    margin: 100px 0 50px 0;
+}
+  
+.blog_img{
+    height: 250px;
+    width: 500px;
+    margin: 0 0 60px 470px;
+}

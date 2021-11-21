@@ -1,0 +1,13 @@
+<div class="card">
+  <%= link_to image_tag(code.image, class: :card_img ), root_path %>
+  <div class="card_body">
+    <%= link_to code.title, root_path, class: :card_title%>
+    <p class="card_summary">
+      <%= code.catch_copy %>
+    </p>
+    <div class="card_bottom_area">
+      <%= link_to blog.user.name, user_path(blog.user.id), class: :card_user %>
+      <%= blog.category.name %>
+    </div>
+  </div>
+</div>
